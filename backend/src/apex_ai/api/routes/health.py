@@ -1,0 +1,25 @@
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from apex_ai.database.session import get_db
+
+router = APIRouter()
+
+
+@router.get("/")
+async def health_check(
+    db: AsyncSession = Depends(get_db),
+):
+    try:
+        await db.execute(text("SELECT 1"))
+        return {
+            "status": "ok",
+            "database": "connected",
+        }
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail="Database is unavailable",
+        ) from exc

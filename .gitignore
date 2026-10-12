@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.venv-expense
+
+# Local configuration and frontend build output
+.env
+.env.*
+!.env.example
+node_modules/
+frontend/dist/
+
+.env
+.env.*
+!.env.example
+
+.venv/
+.venv-expense/
+frontend/node_modules/
+.git/
+**/__pycache__/
+**/*.py[cod]
+**/expenses.db
+**/manim_tmp/

@@ -1,0 +1,1 @@
+export type ChatMessage = { id: string; role: 'user' | 'assistant'; content: string; createdAt?: string }; export type Conversation = { id: string; title: string; updatedAt?: string }; export type ToolServer = { id: string; name: string; description: string; enabled: boolean };
