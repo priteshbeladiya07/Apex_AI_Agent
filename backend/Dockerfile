@@ -5,7 +5,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app/backend/src
 ENV EXPENSE_PYTHON=/opt/expense-venv/bin/python
-
 WORKDIR /app
 
 RUN apt-get update \
