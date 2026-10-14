@@ -24,4 +24,4 @@ COPY backend/src/ /app/backend/src/
 
 EXPOSE 8000
 
-CMD ["/opt/apex-venv/bin/uvicorn", "apex_ai.main:app", "--app-dir", "/app/backend/src", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["/bin/sh", "-c", "exec /opt/apex-venv/bin/uvicorn apex_ai.main:app --app-dir /app/backend/src --host 0.0.0.0 --port ${PORT:-8000}"]
